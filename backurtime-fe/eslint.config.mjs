@@ -16,7 +16,6 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
   ]),
   {
-    ignores: ["build", "node_modules"],
     plugins: {
       prettier: eslintPluginPrettier,
     },
