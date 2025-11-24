@@ -6,7 +6,7 @@ import { NAVBAR_ROUTES } from "./routes";
 import { usePathname } from "next/navigation";
 import NavbarRoute from "./Route";
 import { useMemo } from "react";
-import LogoHeading from "../LogoHeading";
+import Image from "next/image";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -16,9 +16,14 @@ export default function Navbar() {
   }, [pathname]);
 
   return (
-    <div className="bg-dark-normal fixed top-0 left-0 flex min-h-dvh w-[280px] flex-col justify-between rounded-r-[40px] px-6 py-8">
+    <div className="bg-dark-normal group fixed top-0 left-0 z-9999 flex min-h-dvh w-28 flex-col justify-between rounded-r-[40px] px-6 py-8 hover:w-[280px]">
       <div className="flex w-full flex-col gap-y-[142px]">
-        <LogoHeading />
+        <div className="flex items-center justify-center group-hover:justify-start group-hover:gap-x-5">
+          <Image src="/logo.png" alt="app logo" width={40} height={40} />
+          <span className="font-inter hidden text-[22px] font-semibold text-white group-hover:block">
+            Backurtime
+          </span>
+        </div>
         <div className="flex w-full flex-col gap-y-[14px]">
           {NAVBAR_ROUTES.map((r) => {
             const isActive = currentRoute === r.name;
@@ -27,9 +32,12 @@ export default function Navbar() {
           })}
         </div>
       </div>
-      <Link href="/dashboard" className="flex items-center gap-x-6">
+      <Link
+        href="/dashboard"
+        className="flex items-center justify-center group-hover:justify-start group-hover:gap-x-6"
+      >
         <Help />
-        <span className="font-inter text-grey-light text-base font-medium">
+        <span className="font-inter text-grey-light hidden text-base font-medium group-hover:block">
           Help & Support
         </span>
       </Link>

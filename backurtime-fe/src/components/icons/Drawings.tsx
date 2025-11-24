@@ -5,18 +5,17 @@ const SvgDrawings = (props: SVGProps<SVGSVGElement>) => (
     width={24}
     height={24}
     fill="none"
-    className={props.className}
     {...props}
   >
     <path
-      stroke="currentColor"
+      stroke="#DCDCDC"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.5}
       d="M16.995 4h-10c-3.83 0-4.9.92-4.99 4.5 1.93 0 3.49 1.57 3.49 3.5s-1.56 3.49-3.49 3.5c.09 3.58 1.16 4.5 4.99 4.5h10c4 0 5-1 5-5V9c0-4-1-5-5-5M8.993 4v3.5M8.993 16.5V20"
     />
     <path
-      stroke="currentColor"
+      stroke="#DCDCDC"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.5}

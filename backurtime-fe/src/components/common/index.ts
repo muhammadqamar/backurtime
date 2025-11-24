@@ -4,5 +4,22 @@ import Button from "./Button";
 import Checkbox from "./Checkbox";
 import { Navbar } from "./Navbar";
 import LogoHeading from "./LogoHeading";
+import ProfileButton from "./ProfileButton";
+import Heading from "./Heading";
+import Toggle from "./Toggle";
+import { Tabs } from "./Tabs";
+import { Groups } from "./Groups";
 
-export { NeonText, Input, Button, Checkbox, Navbar, LogoHeading };
+export {
+  NeonText,
+  Input,
+  Button,
+  Checkbox,
+  Navbar,
+  LogoHeading,
+  ProfileButton,
+  Heading,
+  Toggle,
+  Tabs,
+  Groups,
+};

@@ -6,7 +6,9 @@ export default function DashboardLayout({
   return (
     <div className="min-h-dvh w-full">
       <Navbar />
-      <div className="min-h-dvh bg-red-200 pl-[280px]">{children}</div>
+      <div className="flex min-h-dvh w-full flex-col bg-black/50 py-8 pl-28">
+        {children}
+      </div>
     </div>
   );
 }

@@ -5,11 +5,10 @@ const SvgMissions = (props: SVGProps<SVGSVGElement>) => (
     width={24}
     height={24}
     fill="none"
-    className={props.className}
     {...props}
   >
     <path
-      stroke="currentColor"
+      stroke="#DCDCDC"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeMiterlimit={10}
@@ -17,7 +16,7 @@ const SvgMissions = (props: SVGProps<SVGSVGElement>) => (
       d="M8.67 14H4c-1.1 0-2 .9-2 2v6h6.67z"
     />
     <path
-      stroke="currentColor"
+      stroke="#DCDCDC"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeMiterlimit={10}
@@ -25,7 +24,7 @@ const SvgMissions = (props: SVGProps<SVGSVGElement>) => (
       d="M13.33 10h-2.67c-1.1 0-2 .9-2 2v10h6.67V12a2 2 0 0 0-2-2M20 17h-4.67v5H22v-3c0-1.1-.9-2-2-2"
     />
     <path
-      stroke="currentColor"
+      stroke="#DCDCDC"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.5}

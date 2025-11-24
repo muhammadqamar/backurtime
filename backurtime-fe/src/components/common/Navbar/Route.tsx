@@ -56,7 +56,7 @@ export default function NavbarRoute({ route, isActive }: NavbarRouteProps) {
     <Link
       href={to}
       className={cn(
-        "flex w-full items-center gap-x-6 rounded-2xl bg-transparent px-5 py-4",
+        "flex w-full items-center justify-center rounded-2xl bg-transparent px-5 py-4 group-hover:justify-start group-hover:gap-x-6",
         isActive &&
           "bg-white/10 bg-[url(/components/route-item_active.png)] bg-left bg-no-repeat",
       )}
@@ -64,7 +64,7 @@ export default function NavbarRoute({ route, isActive }: NavbarRouteProps) {
       {icon}
       <span
         className={cn(
-          "font-inter text-grey-light text-base font-medium",
+          "font-inter text-grey-light hidden text-base font-medium group-hover:block",
           isActive && "text-white",
         )}
       >

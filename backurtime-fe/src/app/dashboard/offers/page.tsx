@@ -1,3 +1,5 @@
+import { Heading } from "@/components/common";
+
 export default function OffersPage() {
-  return <div>offers page</div>;
+  return <Heading title="Offers" />;
 }

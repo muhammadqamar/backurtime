@@ -5,11 +5,10 @@ const SvgClan = (props: SVGProps<SVGSVGElement>) => (
     width={24}
     height={24}
     fill="none"
-    className={props.className}
     {...props}
   >
     <g
-      stroke="currentColor"
+      stroke="#DCDCDC"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeMiterlimit={22.926}

@@ -18,7 +18,7 @@ export const ResetPasswordFormSchema = v.pipe(
       [["newPassword"], ["confirmedPassword"]],
       ({ newPassword, confirmedPassword }) =>
         confirmedPassword.localeCompare(newPassword) === 0,
-      "Passwords doen’t match",
+      "Passwords doesn’t match",
     ),
     ["confirmedPassword"],
   ),

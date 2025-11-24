@@ -24,7 +24,7 @@ export const SignUpFormSchema = v.pipe(
       [["password"], ["confirmedPassword"]],
       ({ password, confirmedPassword }) =>
         confirmedPassword.localeCompare(password) === 0,
-      "Passwords doen’t match",
+      "Passwords doesn’t match",
     ),
     ["confirmedPassword"],
   ),

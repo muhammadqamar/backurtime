@@ -1,4 +1,6 @@
 export const ENV = {
-  development: {},
-  production: {},
+	development: {
+		HTTPS_API_URL: process.env.HTTPS_API_URL || "",
+	},
+	production: {},
 };

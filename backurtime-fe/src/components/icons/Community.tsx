@@ -5,11 +5,10 @@ const SvgCommunity = (props: SVGProps<SVGSVGElement>) => (
     width={24}
     height={24}
     fill="none"
-    className={props.className}
     {...props}
   >
     <path
-      stroke="currentColor"
+      stroke="#DCDCDC"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.5}
