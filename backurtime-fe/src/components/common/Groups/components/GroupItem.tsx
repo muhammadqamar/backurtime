@@ -19,7 +19,7 @@ export default function GroupItem({
   return (
     <button
       className={cn(
-        "flex w-full cursor-pointer items-center justify-center rounded-2xl py-[9px]",
+        "flex w-full cursor-pointer items-center justify-center rounded-2xl px-4 py-[9px]",
         isActiveGroup &&
           "bg-[linear-gradient(120deg,#90D2F6_0%,#C2E8FD_1%,#00CDBD_90%,#009FAA_100%)]",
       )}

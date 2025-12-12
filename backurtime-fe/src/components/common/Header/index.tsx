@@ -13,14 +13,21 @@ import Progress from "../Progress";
 
 interface HeadingProps {
   title: string;
+  setIsMobileSidebar: (value: boolean) => void;
 }
 
-export default function Header({ title }: HeadingProps) {
+export default function Header({ title, setIsMobileSidebar }: HeadingProps) {
   const [availableCount, setAvailableCount] = useState(4);
 
   return (
     <div className="flex h-fit w-full items-center justify-between">
-      <span className="font-inter text-2xl font-semibold text-white">
+      <span className="font-inter flex items-center gap-2.5 text-2xl font-semibold text-white">
+        <span
+          onClick={() => setIsMobileSidebar(true)}
+          className="block cursor-pointer xl:hidden"
+        >
+          <Image src="/logo.png" alt="app logo" width={40} height={40} />
+        </span>
         {title}
       </span>
       <div className="flex items-center gap-4">

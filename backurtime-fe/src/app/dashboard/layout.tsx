@@ -2,6 +2,7 @@
 import { Navbar } from "@/components/common";
 import Header from "@/components/common/Header";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 type PageConfig = {
   [path: string]: {
@@ -13,6 +14,7 @@ type PageConfig = {
 export default function DashboardLayout({
   children,
 }: LayoutProps<"/dashboard">) {
+  const [isMobileSidebar, setIsMobileSidebar] = useState<boolean>(false);
   const pathname = usePathname();
   console.log(pathname);
   const pageConfig: PageConfig = {
@@ -32,6 +34,10 @@ export default function DashboardLayout({
       name: "Settings",
       bg: "/images/settings-bg.jpg",
     },
+    "/dashboard/profile": {
+      name: "Profile",
+      bg: "/pages/profile/profile_bg.webp",
+    },
     // Add more routes as needed
   };
   const { name, bg } = pageConfig[pathname] || {
@@ -40,12 +46,15 @@ export default function DashboardLayout({
   };
   return (
     <div className="bg-black-normal flex h-full w-full">
-      <Navbar />
+      <Navbar
+        setIsMobileSidebar={setIsMobileSidebar}
+        isMobileSidebar={isMobileSidebar}
+      />
       <div
         className="w-full overflow-auto bg-cover bg-center px-5 py-8 md:px-8 xl:px-[70px]"
         style={{ backgroundImage: `url(${bg})` }}
       >
-        <Header title={name} />
+        <Header setIsMobileSidebar={setIsMobileSidebar} title={name} />
         {children}
       </div>
     </div>

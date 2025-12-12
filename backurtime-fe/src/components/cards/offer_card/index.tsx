@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Progress } from "@/components/ui/progress";
 const OfferCard = ({ image, title, progress, stats1, stats2 }) => {
   return (
-    <div className="flex max-w-[400px] flex-col gap-3 rounded-4xl bg-gray-600 p-2 text-white">
+    <div className="flex w-full flex-col gap-3 rounded-4xl bg-gray-600 p-2 text-white">
       <div className="relative aspect-video w-full">
         <Image
           src={image}

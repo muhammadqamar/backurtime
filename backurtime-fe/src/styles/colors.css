@@ -8,15 +8,31 @@
 
   --color-red-error: #ff4167;
 
+  --color-gray: #5b716f;
+
   --color-dark-normal: #08151d;
+  --color-white-10: rgba(255, 255, 255, 0.05);
   --color-primitives-white_20: rgba(255, 255, 255, 0.2);
   --color-primitives-white_30: rgba(255, 255, 255, 0.3);
   --color-primitives-grey_900: #262f38;
   --color-primitives-grey_800: rgba(24, 29, 40, 0.88);
+  --color-deep-teal: rgba(0, 78, 79, 0.5);
+  --color-dark-10: rgba(255, 255, 255, 0.02);
+  --color-dark-100: rgba(0, 0, 0, 0.2);
 
   /* shadow */
 
   --shadow-light: 0 7px 14px 0 rgba(255, 255, 255, 0.24);
   --text-shadow-green: 1px 6px 10.2px rgba(0, 255, 234, 0.6);
   --text-shadow-dark-small: 0 4px 0 rgba(0, 0, 0, 0.5);
+  --shadow-white: 0px 4px 20px 0px rgba(235, 255, 253, 1);
+
+  --shadow-stone:
+    0 4px 81.9px 0 rgba(54, 255, 255, 0.2) inset,
+    0 -2px 5px 0 rgba(54, 255, 255, 0.4) inset,
+    0 11px 14px 0 rgba(54, 255, 255, 0.3) inset, 0 4px 4px 0 #36ffff inset,
+    0 4px 8.4px 0 rgba(54, 255, 255, 0.5) inset;
+  --drop-shadow-white: 0 0 30px #fff;
+  --shadow-dark: 0px 4px 20px 0px rgba(255, 255, 255, 0.1) inset;
+  --shadow-dark-sm: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
