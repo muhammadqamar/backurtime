@@ -1,5 +1,6 @@
 "use client";
 
+import AchievementsCard from "@/components/cards/achievements_card";
 import { NeonText, Toggle } from "@/components/common";
 import { User } from "@/types/user";
 import { customFetch } from "@/utils";
@@ -7,6 +8,12 @@ import { useQuery } from "@tanstack/react-query";
 import { differenceInDays } from "date-fns";
 import Image from "next/image";
 import QRCode from "react-qr-code";
+
+const ACHIEVEMENTS_CARD = [
+  { icon: "/components/sage.svg", title: "Sage" },
+  { icon: "/components/wildfire.svg", title: "Wildfire" },
+  { icon: "/components/legendary.svg", title: "Legendary" },
+];
 
 const PROFILE_STATISTIC = [
   {
@@ -56,7 +63,7 @@ export default function ProfileInformation() {
   });
 
   return (
-    <div className="grid grid-cols-2 gap-x-16 rounded-[48px] border border-white/20 p-15 backdrop-blur-md">
+    <div className="2lg:p-15 2lg:gap-x-16 gap-y- grid grid-cols-1 gap-x-8 rounded-4xl border border-white/20 p-4 backdrop-blur-md md:gap-x-9 md:p-9 lg:grid-cols-2 lg:rounded-[48px]">
       <div className="bg-deep-teal shadow-dark relative flex w-full flex-col overflow-hidden rounded-[20px]">
         <Image
           src="/pages/profile/stardust.webp"
@@ -72,13 +79,23 @@ export default function ProfileInformation() {
           className="-z-1 object-cover opacity-40 mix-blend-plus-lighter"
         />
 
-        <div className="z-px relative flex h-full w-full flex-col justify-between gap-12 rounded-[20px] p-6">
+        <div className="z-px relative flex h-full w-full flex-col justify-between gap-12 rounded-[20px] p-4 sm:p-6">
           <div className="relative flex h-full w-full flex-col items-end justify-end gap-12">
-            <div className="absolute top-0 left-0 flex h-[194px] w-[174px] flex-col gap-y-3 rounded-[20px] bg-white/20 px-3 py-[10px] backdrop-blur-[20px]">
-              <QRCode value="hey" className="size-[150px]" />
-              <span className="font-inter text-center text-sm font-medium text-white">
-                {/* TODO: Replace with real user id */}
+            <div className="absolute top-0 left-0 flex h-auto w-max flex-col gap-y-2 rounded-[20px] bg-white/20 px-3 py-2.5 backdrop-blur-[20px]">
+              <QRCode
+                value="hey"
+                fgColor="rgba(155, 155, 155, 0)"
+                className="size-[150px]"
+              />
+              <span className="font-inter flex items-center justify-center gap-2 text-center text-sm leading-[140%] font-medium tracking-[1%] text-white">
                 ID: 84798678
+                <Image
+                  src="/icons/copy.svg"
+                  alt="copy"
+                  width={20}
+                  height={20}
+                  className="size-5 object-contain"
+                />
               </span>
             </div>
             <Image
@@ -98,23 +115,60 @@ export default function ProfileInformation() {
               />
             </div> */}
           </div>
-          <div className="flex w-full flex-col items-center justify-center gap-y-[26px] rounded-[20px] bg-[#08151D80] py-6 backdrop-blur-lg">
-            <div className="flex items-center gap-x-[26px]">
-              <Image
-                src="/pages/profile/left_divider.png"
-                alt="left divider"
-                width={170}
-                height={24}
-              />
-              <span className="font-cinzel text-xl font-bold text-white text-shadow-[1px_6px_10.2px_rgba(212,139,32,0.6),0px_2px_4px_rgba(210,171,104,1)]">
+          <div className="flex w-full flex-col items-center justify-center gap-y-[26px] rounded-[20px] bg-[#08151D80] px-3 py-6 backdrop-blur-lg sm:px-0">
+            <div className="flex items-center gap-x-2 sm:gap-x-[26px]">
+              <div className="relative h-auto w-full">
+                <Image
+                  src="/pages/profile/left_divider.png"
+                  alt="left divider"
+                  width={170}
+                  height={24}
+                />
+              </div>
+              <span className="font-cinzel text-xl font-bold whitespace-nowrap text-white text-shadow-[1px_6px_10.2px_rgba(212,139,32,0.6),0px_2px_4px_rgba(210,171,104,1)]">
                 LV 0
               </span>
-              <Image
-                src="/pages/profile/right_divider.png"
-                alt="right divider"
-                width={170}
-                height={24}
-              />
+              <div className="relative h-auto w-full">
+                <Image
+                  src="/pages/profile/right_divider.png"
+                  alt="right divider"
+                  width={170}
+                  height={24}
+                />
+              </div>
+            </div>
+
+            <div className="flex w-full flex-col items-center justify-center gap-3 sm:flex-row sm:gap-6">
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/icons/clan-gold.svg"
+                  alt="clan "
+                  width={20}
+                  height={20}
+                  className="object-contain"
+                />
+                <p className="font-inter text-grey-light text-base leading-[150%]! font-normal">
+                  Clan:
+                  <span className="ml-1 leading-[140%]! font-semibold!">
+                    Ammanis
+                  </span>
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/icons/my-rank.svg"
+                  alt="clan "
+                  width={20}
+                  height={20}
+                  className="object-contain"
+                />
+                <p className="font-inter text-grey-light text-base leading-[150%]! font-normal">
+                  My rank:
+                  <span className="ml-1 leading-[140%]! font-semibold!">
+                    Strategist
+                  </span>
+                </p>
+              </div>
             </div>
             <Image
               src="/components/stone_progress_bar.png"
@@ -162,11 +216,11 @@ export default function ProfileInformation() {
           <span className="font-cinzel text-xl leading-[120%] font-bold text-white uppercase">
             My statistic
           </span>
-          <div className="grid w-full grid-cols-2 gap-x-8 gap-y-4">
+          <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-x-5 sm:gap-y-4 md:gap-x-8">
             {PROFILE_STATISTIC.map((ps, index) => (
               <div
                 key={ps.id}
-                className="relative flex min-h-[77px] w-full items-center gap-x-5 bg-[url(/pages/profile/profile_statistic_border.webp)] bg-size-[99%_100%] bg-no-repeat py-3 pr-6 pl-4"
+                className="relative flex min-h-[77px] w-full items-center gap-x-4 bg-[url(/pages/profile/profile_statistic_border.webp)] bg-size-[99%_100%] bg-no-repeat py-3 pr-6 pl-4 sm:gap-x-5"
               >
                 <Image
                   src="/pages/profile/profile_statistic_border_right.svg"
@@ -180,9 +234,9 @@ export default function ProfileInformation() {
                   width={48}
                   height={48}
                   alt={`statistic image ${index}`}
-                  className="h-12 w-12 object-contain drop-shadow-[0_4px_10px_rgba(235,255,255,0.8)]"
+                  className="drop-shadow-icon-sm h-12 w-12 object-contain"
                 />
-                <div className="gap-y-.5 flex flex-col">
+                <div className="gap-y-.5 relative z-2 flex flex-col">
                   <span className="font-cinzel text-2xl font-bold text-white text-shadow-[1px_6px_10.2px_rgba(0,255,234,0.3)]">
                     {ps.value}
                   </span>
@@ -198,7 +252,7 @@ export default function ProfileInformation() {
         <div className="flex w-full flex-col gap-y-6 border-b border-b-white/20 pb-8">
           <div className="flex w-full items-center justify-between">
             <span className="font-cinzel text-xl font-bold text-white">
-              My statistic
+              Achievements
             </span>
             <button
               className="font-inter flex cursor-pointer items-center justify-center text-base font-semibold text-white"
@@ -207,19 +261,17 @@ export default function ProfileInformation() {
               View all
             </button>
           </div>
-          {/* backdrop-filter: blur(10px);
-          border-radius: 20px;
-background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.05) 100%); */}
-          <div className="grid w-full grid-cols-3 items-center gap-x-5">
-            {[1, 2, 3].map((i) => (
-              <StatisticCard key={i} />
+
+          <div className="grid w-full grid-cols-2 items-center gap-4 sm:gap-5 lg:grid-cols-3">
+            {ACHIEVEMENTS_CARD.map((card, i) => (
+              <AchievementsCard key={i} {...card} />
             ))}
           </div>
         </div>
 
         <Toggle
           label={
-            <div className="flex flex-col gap-y-[6px]">
+            <div className="flex flex-col gap-y-1.5">
               <span className="font-inter text-base font-medium text-white">
                 Adds
               </span>
@@ -234,29 +286,3 @@ background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255,
     </div>
   );
 }
-
-const StatisticCard = () => {
-  return (
-    <div className="bg-dark-10 relative flex w-full flex-col items-start gap-2 overflow-hidden rounded-3xl p-1">
-      <Image
-        src="/pages/profile/shadow-white.svg"
-        fill
-        alt="layer"
-        className="object-fill"
-      />
-      <div className="relative z-2 h-[132px] w-full overflow-hidden rounded-[20px] bg-[linear-gradient(180deg,rgba(255,255,255,0.10)_0%,rgba(255,255,255,0.05)_100%)]">
-        <Image
-          src="/pages/profile/layer.png"
-          fill
-          alt="layer"
-          className="object-cover opacity-5"
-        />
-      </div>
-      <div className="relative z-2 min-h-10 w-full p-2">
-        <p className="font-inter text-center text-base leading-[150%] font-medium text-white">
-          Sage
-        </p>
-      </div>
-    </div>
-  );
-};

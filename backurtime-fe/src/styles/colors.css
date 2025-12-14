@@ -19,6 +19,7 @@
   --color-deep-teal: rgba(0, 78, 79, 0.5);
   --color-dark-10: rgba(255, 255, 255, 0.02);
   --color-dark-100: rgba(0, 0, 0, 0.2);
+  --color-dark-50: #18242b;
 
   /* shadow */
 
@@ -26,6 +27,7 @@
   --text-shadow-green: 1px 6px 10.2px rgba(0, 255, 234, 0.6);
   --text-shadow-dark-small: 0 4px 0 rgba(0, 0, 0, 0.5);
   --shadow-white: 0px 4px 20px 0px rgba(235, 255, 253, 1);
+  --drop-shadow-icon-sm: 0 4px 10px rgba(235, 255, 255, 0.8);
 
   --shadow-stone:
     0 4px 81.9px 0 rgba(54, 255, 255, 0.2) inset,
@@ -38,4 +40,5 @@
 
   --shadow-light-sm: 0 1px 0 0 rgba(255, 255, 255, 0.3) inset;
   --shadow-green-sm: 0 4px 50px 0 rgba(54, 255, 255, 0.4);
+  --shadow-button: 1px 0px 10.2px 0px rgba(0, 255, 234, 0.6);
 }

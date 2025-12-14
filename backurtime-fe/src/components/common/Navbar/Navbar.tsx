@@ -1,6 +1,6 @@
 "use client";
 
-import { Help } from "@/components/icons";
+import { Help, More } from "@/components/icons";
 import Link from "next/link";
 import { NAVBAR_ROUTES, ORDER } from "./routes";
 import { usePathname } from "next/navigation";
@@ -85,6 +85,33 @@ export default function Navbar({
 
           return <NavbarRoute key={r.id} isActive={isActive} route={r} />;
         })}
+
+        <button
+          className={cn(
+            "flex h-full w-full flex-col items-center justify-center gap-1 sm:hidden",
+            "rounded-2xl px-2 pt-2 pb-[11px]",
+            false &&
+              "bg-white-10 bg-[url(/components/route-item_active-mb.svg)] bg-cover bg-bottom bg-no-repeat",
+          )}
+        >
+          <div
+            className={cn(
+              "flex shrink-0 items-center justify-center",
+              false ? "text-white" : "text-grey-light",
+            )}
+          >
+            <More className={cn("text-grey-light", false && "text-white")} />
+          </div>
+
+          <span
+            className={cn(
+              "font-inter text-grey-light overflow-hidden text-[10px] leading-[140%] font-normal tracking-[1%] whitespace-nowrap",
+              false && "text-white",
+            )}
+          >
+            More
+          </span>
+        </button>
       </div>
     </Fragment>
   );

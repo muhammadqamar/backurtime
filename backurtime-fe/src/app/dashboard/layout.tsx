@@ -45,7 +45,7 @@ export default function DashboardLayout({
     bg: "/images/settings-bg.jpg",
   };
   return (
-    <div className="bg-black-normal flex h-full w-full">
+    <div className="bg-black-normal flex h-full w-full pb-16 sm:pb-0">
       <Navbar
         setIsMobileSidebar={setIsMobileSidebar}
         isMobileSidebar={isMobileSidebar}

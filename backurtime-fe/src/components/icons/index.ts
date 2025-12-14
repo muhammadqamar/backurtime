@@ -12,3 +12,4 @@ export { default as Refresh } from "./Refresh";
 export { default as Rewards } from "./Rewards";
 export { default as Store } from "./Store";
 export { default as Time } from "./Time";
+export { default as More } from "./More";
