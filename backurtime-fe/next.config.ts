@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
-  typedRoutes: true, // ensures route correctness when using the App Router
+  typedRoutes: true, // ensures route correctness when using the App
   typescript: {
     ignoreBuildErrors: false,
   },
