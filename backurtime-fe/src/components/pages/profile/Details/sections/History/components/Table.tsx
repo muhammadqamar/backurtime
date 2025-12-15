@@ -47,8 +47,10 @@ export default function HistoryTable({ currentGroup }: HistoryTableProps) {
   return (
     <div
       className={cn(
-        "flex w-full flex-col gap-y-4",
-        isPrizesWonGroup && "grid grid-cols-3 gap-x-6",
+        "flex w-full flex-col gap-y-4 overflow-x-auto",
+
+        isPrizesWonGroup &&
+          "grid grid-cols-1 gap-x-6 sm:grid-cols-2 lg:grid-cols-3",
       )}
     >
       {group.data.map((d, index) => {
@@ -91,7 +93,7 @@ export default function HistoryTable({ currentGroup }: HistoryTableProps) {
         return (
           <div
             key={d.id}
-            className="grid w-full grid-cols-4 rounded-2xl bg-white/10 px-4 py-3"
+            className="grid w-full min-w-[500px] grid-cols-4 rounded-2xl bg-white/10 px-4 py-3"
           >
             <div className="flex items-center gap-x-4">
               <span className="font-inter text-base font-normal text-white">

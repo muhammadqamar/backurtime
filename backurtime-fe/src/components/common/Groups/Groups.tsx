@@ -30,7 +30,7 @@ export default function Groups({
     <div
       style={{ gridTemplateColumns: `repeat(${groups.length}, 1fr)` }}
       className={cn(
-        "grid w-full rounded-2xl bg-white/20 p-[3px]",
+        "grid w-full overflow-x-auto rounded-2xl bg-white/20 p-[3px]",
         wrapperClassName,
       )}
     >

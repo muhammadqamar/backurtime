@@ -1,4 +1,5 @@
 @theme {
+  --breakpoint-xsm: 27.5rem; /* 440px */
   --breakpoint-sm: 40rem; /* 640px */
   --breakpoint-md: 48rem; /* 768px */
   --breakpoint-lg: 64rem; /* 1024px */

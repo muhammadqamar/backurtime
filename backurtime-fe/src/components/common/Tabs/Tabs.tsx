@@ -29,7 +29,7 @@ export default function Tabs({
   return (
     <div
       className={cn(
-        "border-b-grey-light flex w-full items-center border-b",
+        "border-b-grey-light flex w-full items-center overflow-x-auto border-b",
         wrapperClassName,
       )}
     >

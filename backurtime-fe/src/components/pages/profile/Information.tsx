@@ -63,7 +63,7 @@ export default function ProfileInformation() {
   });
 
   return (
-    <div className="2lg:p-15 2lg:gap-x-16 gap-y- grid grid-cols-1 gap-x-8 rounded-4xl border border-white/20 p-4 backdrop-blur-md md:gap-x-9 md:p-9 lg:grid-cols-2 lg:rounded-[48px]">
+    <div className="2lg:p-15 2lg:gap-x-16 grid grid-cols-1 gap-x-8 gap-y-8 rounded-4xl border border-white/20 p-4 backdrop-blur-md md:gap-x-9 md:p-9 lg:grid-cols-2 lg:rounded-[48px]">
       <div className="bg-deep-teal shadow-dark relative flex w-full flex-col overflow-hidden rounded-[20px]">
         <Image
           src="/pages/profile/stardust.webp"
@@ -103,7 +103,7 @@ export default function ProfileInformation() {
               alt="mock user avatar full"
               width={635}
               height={564}
-              className="h-[564px] w-full! object-left"
+              className="mt-[194px] w-full! object-contain object-left sm:mt-0 sm:object-[inherit]"
             />
             {/* <div className="relative mt-18 flex h-full w-full flex-col items-center justify-center bg-[url(/pages/profile/avatar_podium.webp)]">
               <Image
@@ -180,8 +180,8 @@ export default function ProfileInformation() {
         </div>
       </div>
       <div className="flex w-full flex-col gap-y-8">
-        <div className="flex w-full justify-between border-b border-b-white/20 pb-8">
-          <div className="flex flex-col gap-y-[10px]">
+        <div className="flex w-full flex-wrap justify-between gap-4 border-b border-b-white/20 pb-8">
+          <div className="flex flex-col gap-y-2.5">
             {isLoading ? (
               <span>Loading</span>
             ) : (
@@ -207,7 +207,7 @@ export default function ProfileInformation() {
             alt="profile settings button"
             width={48}
             height={48}
-            className="cursor-pointer"
+            className="ml-auto cursor-pointer"
             onClick={() => alert("In development")}
           />
         </div>
@@ -262,7 +262,7 @@ export default function ProfileInformation() {
             </button>
           </div>
 
-          <div className="grid w-full grid-cols-2 items-center gap-4 sm:gap-5 lg:grid-cols-3">
+          <div className="xsm:grid-cols-2 grid w-full grid-cols-1 items-center gap-4 sm:gap-5 lg:grid-cols-3">
             {ACHIEVEMENTS_CARD.map((card, i) => (
               <AchievementsCard key={i} {...card} />
             ))}
